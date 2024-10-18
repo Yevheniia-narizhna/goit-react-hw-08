@@ -8,6 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 // import { selectError, selectLoading } from "./redux/contactsSlice";
 import { fetchContacts } from "./redux/contacts/operations";
 import { selectError, selectLoading } from "./redux/contacts/slice";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage/HomePage";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   const isLoading = useSelector(selectLoading);
@@ -18,15 +24,23 @@ function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <>
-      <div>
-        <ContactForm />
-        <SearchBox />
-        {isLoading && <h2>Loading...</h2>}
-        {isError && <h2>Error...</h2>}
-        <ContactList />
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="contacts" element={<ContactsPage />} />
+        <Route path="register" element={<RegistrationPage />} />
+        <Route path="login" element={<LoginPage />} />
+      </Route>
+    </Routes>
+    // <>
+    //   <div>
+    //     <ContactForm />
+    //     <SearchBox />
+    //     {isLoading && <h2>Loading...</h2>}
+    //     {isError && <h2>Error...</h2>}
+    //     <ContactList />
+    //   </div>
+    // </>
   );
 }
 

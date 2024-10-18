@@ -4,6 +4,8 @@ export default function Navigation() {
   return (
     <div>
       <NavLink to="/">Home</NavLink>
+      <NavLink to="/contacts">Contacts</NavLink>
+      <NavLink to="/">Home</NavLink>
     </div>
   );
 }
