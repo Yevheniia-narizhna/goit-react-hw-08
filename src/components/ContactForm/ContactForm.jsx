@@ -2,7 +2,8 @@ import { Field, Form, Formik, ErrorMessage } from "formik";
 import s from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
+// import { addContact } from "../../redux/contacts/contactsOps";
 
 const phoneRe = /(\+)?(\(?\d+\)?)(([\s-]+)?(\d+)){0,}/g;
 const nameRe = /[a-zA-Z]+$/;
