@@ -1,8 +1,21 @@
 import { Field, Form, Formik } from "formik";
+import s from "./Registration.module.css";
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/auth/operations";
 
 export default function Registration() {
+  const dispatch = useDispatch();
+  const initialValues = {
+    name: "",
+    email: "",
+    password: "",
+  };
+  const handleSubmit = (values, options) => {
+    dispatch(register(values));
+    options.resetForm();
+  };
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Sign up now!</h1>
@@ -18,7 +31,7 @@ export default function Registration() {
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <Formik>
+          <Formik onSubmit={handleSubmit} initialValues={initialValues}>
             <Form className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -58,7 +71,7 @@ export default function Registration() {
                 <label className="label"></label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary" type="submit">
+                <button className={s.btnreg} type="submit">
                   Register
                 </button>
               </div>
