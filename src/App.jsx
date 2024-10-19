@@ -7,13 +7,14 @@ import { useDispatch, useSelector } from "react-redux";
 // import { fetchContacts } from "./redux/contacts/contactsOps";
 // import { selectError, selectLoading } from "./redux/contactsSlice";
 import { fetchContacts } from "./redux/contacts/operations";
-import { selectError, selectLoading } from "./redux/contacts/slice";
+// import { selectError, selectLoading } from "./redux/contacts/slice";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage/HomePage";
 import ContactsPage from "./pages/ContactsPage/ContactsPage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import { selectError, selectLoading } from "./redux/contacts/selectors";
 
 function App() {
   const isLoading = useSelector(selectLoading);

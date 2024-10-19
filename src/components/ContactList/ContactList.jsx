@@ -2,18 +2,20 @@ import s from "./ContactList.module.css";
 import Contact from "../Contact/Contact";
 import { useDispatch, useSelector } from "react-redux";
 // import { selectFilteredContacts } from "../../redux/contactsSlice";
-import { deleteContact } from "../../redux/contacts/operations";
+import { deleteContact, fetchContacts } from "../../redux/contacts/operations";
 import { selectFilteredContacts } from "../../redux/contacts/slice";
+import { useEffect } from "react";
 // import { deleteContact } from "../../redux/contacts/contactsOps";
 
 export default function ContactList() {
-  // const contacts = useSelector(selectContact);
   const filteredContact = useSelector(selectFilteredContacts);
 
   const dispatch = useDispatch();
-  // const filteredContact = contacts.filter((contact) =>
-  //   contact.name.toLowerCase().includes(filter.toLowerCase())
-  // );
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   return (
     <>
       <ul className={s.contactlist}>
