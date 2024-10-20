@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className={s.header}>
       <Navigation />
-      {isLoggedIn && <h2>Welcome, {user.name}</h2>}
+      {isLoggedIn && <h2 className={s.welcome}>Welcome, {user.name}</h2>}
       {!isLoggedIn && <AuthNavigate />}
       {isLoggedIn && (
         <button onClick={() => dispatch(logout())} className={s.btnexit}>
