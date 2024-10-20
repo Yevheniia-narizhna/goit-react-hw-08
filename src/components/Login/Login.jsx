@@ -2,12 +2,12 @@ import { Field, Form, Formik } from "formik";
 import s from "./Login.module.css";
 import { login } from "../../redux/auth/operations";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../redux/auth/selectors";
-import { Navigate } from "react-router-dom";
+// import { selectIsLoggedIn } from "../../redux/auth/selectors";
+// import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
   const initialValues = {
     email: "",
     password: "",
@@ -16,14 +16,14 @@ export default function Login() {
     dispatch(login(values));
     options.resetForm();
   };
-  if (isLoggedIn) {
-    return <Navigate to="/" />;
-  }
+  // if (isLoggedIn) {
+  //   return <Navigate to="/" />;
+  // }
   return (
     <div className="hero">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Sign up now!</h1>
+          <h1 className="text-5xl font-bold">Login now!</h1>
           <p className="py-6">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus,
             recusandae ratione? Obcaecati praesentium repudiandae itaque

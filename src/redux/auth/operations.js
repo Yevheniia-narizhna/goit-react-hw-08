@@ -36,8 +36,29 @@ export const login = createAsyncThunk(
 );
 
 export const logout = createAsyncThunk("logout", async (_, thunkApi) => {
+  const token = thunkApi.getState().auth.token;
+
+  if (!token) {
+    return thunkApi.rejectWithValue("No token found");
+  }
+  setAuthHeader(token);
   try {
     await authApi.post("users/logout");
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});
+
+export const refresh = createAsyncThunk("refresh", async (_, thunkApi) => {
+  const token = thunkApi.getState().auth.token;
+
+  if (!token) {
+    return thunkApi.rejectWithValue("Unable to fetch user");
+  }
+  setAuthHeader(token);
+  try {
+    const { data } = await authApi.get("users/me");
+    return data;
   } catch (error) {
     return thunkApi.rejectWithValue(error.message);
   }

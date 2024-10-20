@@ -6,13 +6,19 @@ import { selectContact } from "./selectors";
 import { selectFilter } from "../filters/selectors";
 // import { selectFilter } from "./filters/filtersSlice";
 
+const initialState = {
+  items: [],
+  loading: false,
+  error: null,
+};
 const contactsSlice = createSlice({
   name: "contacts",
-  initialState: {
-    items: [],
-    loading: false,
-    error: null,
-  },
+  initialState,
+  // initialState: {
+  //   items: [],
+  //   loading: false,
+  //   error: null,
+  // },
 
   extraReducers: (builder) => {
     builder
@@ -67,11 +73,11 @@ export const contactReducer = contactsSlice.reducer;
 // export const selectError = (state) => state.contacts.error;
 // export const selectLoading = (state) => state.contacts.loading;
 
-export const selectFilteredContacts = createSelector(
-  [selectContact, selectFilter],
-  (contacts, filter) => {
-    return contacts.filter((contact) =>
-      contact.name.trim().toLowerCase().includes(filter.trim().toLowerCase())
-    );
-  }
-);
+// export const selectFilteredContacts = createSelector(
+//   [selectContact, selectFilter],
+//   (contacts, filter) => {
+//     return contacts.filter((contact) =>
+//       contact.name.trim().toLowerCase().includes(filter.trim().toLowerCase())
+//     );
+//   }
+// );
