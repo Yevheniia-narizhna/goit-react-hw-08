@@ -28,9 +28,10 @@ const slice = createSlice({
       })
       .addCase(logout.fulfilled, () => initialState)
       .addCase(refresh.fulfilled, (state, action) => {
-        state.email = action.payload.email;
-        state.name = action.payload.name;
+        state.user.email = action.payload.email;
+        state.user.name = action.payload.name;
         state.isLoggedIn = true;
+        state.isRefreshing = false;
       })
       .addCase(refresh.pending, (state) => {
         state.isRefreshing = true;

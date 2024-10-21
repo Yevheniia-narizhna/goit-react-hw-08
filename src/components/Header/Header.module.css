@@ -10,10 +10,13 @@
 }
 .btnexit {
   border: none;
+  width: 50px;
+  transition: background-color 0.3s;
 }
 .btnexit:hover,
 .btnexit:focus {
-  background-color: #dbdbdb;
+  background-color: #dbdbdb !important;
+  transition: background-color 0.3s;
 }
 .welcome {
   color: #dbdbdb;
