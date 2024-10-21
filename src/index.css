@@ -32,7 +32,7 @@ body {
   min-height: 100vh;
   background-color: #5a5a5a;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(./src/assets/img/istockphoto-1133155870-612x612.jpg);
+    url(/src/assets/img/istockphoto-1133155870-612x612.jpg);
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
