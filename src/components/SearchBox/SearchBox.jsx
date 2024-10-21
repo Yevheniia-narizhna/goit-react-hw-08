@@ -10,6 +10,7 @@ export default function SearchBox({ inputValue }) {
       <label className={s.lable} htmlFor="search-input">
         <span className={s.text}>Find contacts by name</span>
         <input
+          className={s.input}
           type="text"
           value={inputValue}
           onChange={(e) => dispatch(changeSearch(e.target.value))}

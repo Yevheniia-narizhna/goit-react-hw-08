@@ -43,12 +43,12 @@ export default function ContactForm() {
         <Form className={s.formik}>
           <label htmlFor="name" className={s.label}>
             <span>Name</span>
-            <Field type="text" name="name" />
+            <Field className={s.input} type="text" name="name" />
             <ErrorMessage name="name" component="span" className={s.error} />
           </label>
           <label htmlFor="number" className={s.label}>
             <span>Number</span>
-            <Field type="text" name="number" />
+            <Field className={s.input} type="text" name="number" />
             <ErrorMessage name="number" component="span" className={s.error} />
           </label>
           <button className={s.button} type="submit">

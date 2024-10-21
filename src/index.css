@@ -20,7 +20,7 @@ a {
   transition: color 0.3s;
 }
 a:hover {
-  color: #2b2b2b !important;
+  color: #555555 !important;
   transition: color 0.3s;
 }
 
@@ -28,10 +28,11 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vh;
   min-height: 100vh;
   background-color: #5a5a5a;
-  background-image: url(/src/assets/img/5-easy-hacks-1.ipg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./src/assets/img/istockphoto-1133155870-612x612.jpg);
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -69,7 +70,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #2b2b2b;
+    color: #555555;
   }
   button {
     background-color: #f9f9f9 !important;
