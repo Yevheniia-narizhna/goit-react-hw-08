@@ -31,8 +31,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #5a5a5a;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url();
+  background-image: url(/src/assets/img/5-easy-hacks-1.ipg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 h1 {
